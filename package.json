@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^7.4.0",
+    "prop-types": "^15.7.2",
+    "ra-data-json-server": "^3.0.0",
     "react": "^16.12.0",
+    "react-admin": "^3.0.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0"
   },
