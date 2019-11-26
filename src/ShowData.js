@@ -3,14 +3,13 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import firebase from './Firebase';
 import { Admin, Resource, ListGuesser } from 'react-admin';
-import Edit from './Edit';
-import ShowData from './ShowData';
+// import Edit from './Edit';
 import Create from './Create';
-import Show from './Show';
+// import Show from './Show';
 
 import jsonServerProvider from 'ra-data-json-server';
 
-class App extends Component {
+class ShowData extends Component {
   constructor(props) {
     super(props);
     this.ref = firebase.firestore().collection('user');
@@ -50,22 +49,48 @@ class App extends Component {
 
  <Router>
       <div>
-        <Route path='/showData' component={ShowData} />
+        
         <Route path='/create' component={Create} />
-        <Route path='/edit/:id' component={Edit} />
-        <Route path='/show/:id' component={Show} />
-
        
       </div>
  
 
 
 
-     <Link to="/showData">Start Here</Link>
+    
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              USER LIST
+            </h3>
+          </div>
+          <div class="panel-body">
+            <h4><Link to="/create">Add Board</Link></h4>
+            <table class="table table-stripe">
+              <thead>
+                <tr>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.user.map(userDetail =>
+                  <tr>
+                    <Link to={`/show/${userDetail.key}`}><td>{userDetail.first_name}</td></Link>
+                    <td>{userDetail.last_name}</td>
+                    <td>{userDetail.email}</td>
+
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
          </Router>
       </div>
     );
   }
 }
 
-export default App;
+export default ShowData;
