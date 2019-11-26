@@ -7,6 +7,7 @@ import Edit from './Edit';
 import ShowData from './ShowData';
 import Create from './Create';
 import Show from './Show';
+import Login from './Login';
 
 import jsonServerProvider from 'ra-data-json-server';
 
@@ -50,6 +51,7 @@ class App extends Component {
 
  <Router>
       <div>
+      <Route authenticated={this.props.authenticated} path="/login" component={Login} />
         <Route path='/showData' component={ShowData} />
         <Route path='/create' component={Create} />
         <Route path='/edit/:id' component={Edit} />
@@ -61,7 +63,7 @@ class App extends Component {
 
 
 
-     <Link to="/showData">Start Here</Link>
+     <Link to="/Login">Start Here</Link>
          </Router>
       </div>
     );
