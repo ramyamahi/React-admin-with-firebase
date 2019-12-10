@@ -67,24 +67,24 @@ class Edit extends Component {
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">
-              EDIT BOARD
+              EDIT USER
             </h3>
           </div>
           <div class="panel-body">
-            <h4><Link to={`/show/${this.state.key}`} class="btn btn-primary">Board List</Link></h4>
+            <h4><Link to={`/show/${this.state.key}`} class="btn btn-primary">User List</Link></h4>
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
-                <label for="first_name">Title:</label>
-                <input type="text" class="form-control" name="first_name" value={this.state.first_name} onChange={this.onChange} placeholder="Title" />
-              </div>
+                <label for="first_name">First Name:</label>
+                <input type="text" class="form-control" name="first_name" value={this.state.first_name} onChange={this.onChange} placeholder="First name" />
+              </div><br/>
               <div class="form-group">
-                <label for="last_name">Description:</label>
-                <input type="text" class="form-control" name="last_name" value={this.state.last_name} onChange={this.onChange} placeholder="Description" />
-              </div>
+                <label for="last_name">Last Name:</label>
+                <input type="text" class="form-control" name="last_name" value={this.state.last_name} onChange={this.onChange} placeholder="Last name" />
+              </div><br/>
               <div class="form-group">
-                <label for="email">Author:</label>
-                <input type="text" class="form-control" name="email" value={this.state.email} onChange={this.onChange} placeholder="Author" />
-              </div>
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" name="email" value={this.state.email} onChange={this.onChange} placeholder="Email" />
+              </div><br/>
               <button type="submit" class="btn btn-success">Submit</button>
             </form>
           </div>

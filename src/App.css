@@ -20,3 +20,18 @@
 .App-link {
   color: #09d3ac;
 }
+
+
+.error-message{
+  color: red;
+}
+
+
+.login-link{
+  color: #ebebeb;
+  text-decoration: none;
+}
+
+.detail-list{
+  color: blue;
+}

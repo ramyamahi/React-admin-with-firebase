@@ -3,10 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import firebase from './Firebase';
 import { Admin, Resource, ListGuesser } from 'react-admin';
-// import Edit from './Edit';
 import Create from './Create';
-// import Show from './Show';
-
 import jsonServerProvider from 'ra-data-json-server';
 
 class ShowData extends Component {
@@ -45,28 +42,13 @@ class ShowData extends Component {
     const dataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
     console.log(this.state.user, "this.state.user")
     return (
-      <div class="container">
-
- <Router>
-      <div>
-        
-        <Route path='/create' component={Create} />
-       
-      </div>
- 
-
-
-
-    
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              USER LIST
-            </h3>
+      <div>    
+          <div>
+            <h3>USER LIST</h3>
           </div>
-          <div class="panel-body">
-            <h4><Link to="/create">Add Board</Link></h4>
-            <table class="table table-stripe">
+          <div>
+            <h4><Link to="/create">Add User</Link></h4>
+            <table>
               <thead>
                 <tr>
                   <th>First name</th>
@@ -86,8 +68,6 @@ class ShowData extends Component {
               </tbody>
             </table>
           </div>
-        </div>
-         </Router>
       </div>
     );
   }
